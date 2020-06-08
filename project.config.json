@@ -1,0 +1,119 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"preloadBackgroundData": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.11.0",
+	"appid": "wx4781fb3ad3469c79",
+	"projectname": "hjcs-wcmp",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/lvprotectDetail/lvprotectDetail",
+					"pathName": "pages/lvprotectDetail/lvprotectDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/fraudDetail/fraudDetail",
+					"pathName": "pages/fraudDetail/fraudDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/myInfo/myInfo",
+					"pathName": "pages/myInfo/myInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "12131",
+					"pathName": "pages/qrcode/qrcode",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/qrcode/qrcode",
+					"pathName": "pages/qrcode/qrcode",
+					"query": "scene=123456",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "pages/qrcode/qrcode",
+					"pathName": "pages/qrcode/qrcode",
+					"query": "scene=1011",
+					"scene": 1011
+				},
+				{
+					"id": -1,
+					"name": "pages/qrcode/qrcode",
+					"pathName": "pages/qrcode/qrcode",
+					"query": "scene=1011",
+					"scene": null
+				}
+			]
+		}
+	}
+}

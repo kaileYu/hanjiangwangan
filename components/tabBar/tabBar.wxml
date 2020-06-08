@@ -1,0 +1,60 @@
+<!--components/tabBar/tabBar.js.wxml-->
+<!-- 主页底部的导航栏 -->    
+<view class="tabbar-bottom">
+  <view class="tabbar-bottom-item">
+    <view class="tabbar-bottom-view tabbar-bottom-right" data-index="{{0}}" bindtap="choosePage">
+      <block>
+        <image wx:if="{{activeId==0}}" src="../../images/home_active.png" mode="aspectFit"></image>
+        <image wx:else src="../../images/home.png"></image>
+      </block>
+      <view class="font-20 {{activeId==0?'active':''}}">首页</view>
+    </view>
+  </view>
+  <view class="tabbar-bottom-item">
+    <view class="tabbar-bottom-view tabbar-bottom-left" data-index="{{1}}" bindtap="choosePage">
+      <block>
+        <image wx:if="{{activeId==1}}" src="../../images/my_active.png" mode="aspectFit"></image>
+        <image wx:else src="../../images/my.png" mode="aspectFit"></image>
+      </block>
+      <view class="font-20 {{activeId==1?'active':''}}">我的</view>
+    </view>
+  </view>
+  <view class="tabBar-bottom-center" catchtap="showMore">
+    <image src="../../images/center_icon.png"></image>
+  </view>
+</view>
+<!-- 出现的遮罩层 -->
+<view wx:if="{{choose}}" class="mask" bindtap="dismissMask" catchtouchmove="preventTouchMove">
+  <view>
+    <view class="{{choose? 'show-animation2' : 'close-animation2'}} show-btn2 {{closeAnmaition ?'close-animation2' : ''}}" catchtap="goToAddPage" id="1">
+      <button class="btn center">
+        <image src="../../images/illegal-clues.png" style="width:60rpx; height:56rpx;"></image>
+      </button>
+      <view class="mt-24">
+        新增违法线索
+      </view>
+
+    </view>
+    <view class="{{choose? 'show-animation1' : 'close-animation1'}} show-btn1 {{closeAnmaition ?'close-animation1' : ''}}" catchtap="goToAddPage" id="2">
+      <button class="btn center">
+        <image src="../../images/legal-advice.png" style="width:68rpx; height:57rpx;"></image>
+      </button>
+      <view class="mt-24">
+        新增法律咨询
+      </view>
+      
+    </view>
+    <view class="{{choose? 'show-animation3' : ''}} show-btn3 {{closeAnmaition ?'close-animation3' : ''}}" catchtap="goToAddPage" id="3">
+    <button class="btn center">
+      <image src="../../images/suggestions.png" style="width:54rpx; height:60rpx;"></image>
+    </button>
+      <view class="mt-24">
+        新增意见建议
+      </view>
+    </view>
+      <image src="../../images/close.png" class="{{choose? 'show-animation' : ''}} close-btn {{closeAnmaition ?'close-animation' : ''}}"></image>
+  </view>
+  <view class="{{choose? 'show-animation4' : ''}} arcbox {{closeAnmaition ?'close-animation4' : ''}}">
+    <view class="arcbottom"></view>          
+  </view>
+</view>

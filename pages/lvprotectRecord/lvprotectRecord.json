@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "等级保护备案",
+  "usingComponents": {
+    "icon": "../../components/icon/icon"
+  }
+}

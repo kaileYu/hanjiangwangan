@@ -1,0 +1,134 @@
+/* pages/myAppDetail/myAppDetail.wxss */
+.my-app-detail {
+  width: 690rpx;
+  margin: 0 auto;
+}
+
+.enterpriseName {
+  height: 140rpx;
+  line-height: 140rpx;
+  background: white;
+  margin-top: 20rpx;
+  display: flex;
+  padding-left: 20rpx;
+  border-radius: 10rpx;
+}
+
+.enterpriseName-input {
+  height: 140rpx;
+  line-height: 140rpx;
+  padding-left: 30rpx;
+  font-size: 30rpx;
+  font-family: Adobe Heiti Std;
+  font-weight: normal;
+  color: rgba(51, 51, 51, 1);
+}
+
+.info {
+  background: white;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  padding-bottom: 30rpx;
+}
+
+.info-item {
+  padding-top: 55rpx;
+  display: flex;
+}
+.info-item:nth-child(1){
+  margin-bottom: 20rpx;
+}
+.info-item-lable,.network-info-item-lable {
+  text-align: end;
+  font-size: 30rpx;
+  font-family: Adobe Heiti Std;
+  font-weight: normal;
+  color: rgba(102, 102, 102, 1);
+}
+.info-item-lable{
+  width: 220rpx;
+}
+.network-info-item-lable{
+  width: 160rpx;
+}
+.info-item-input {
+  font-size: 30rpx;
+  font-family: Adobe Heiti Std;
+  font-weight: normal;
+  color: rgba(51, 51, 51, 1);
+}
+.info-item-textarea{
+  width: 440rpx;
+  border: 1rpx solid #ccc;
+  padding-left: 10rpx;
+  font-size: 30rpx;
+  font-family: Adobe Heiti Std;
+  font-weight: normal;
+  color: rgba(51, 51, 51, 1);
+  margin-bottom: 50rpx;
+}
+.image-box {
+  width: 440rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image {
+  width: 200rpx;
+  height: 200rpx;
+  border: 1rpx solid #ccc;
+  margin-right: 10rpx;
+}
+
+.status {
+  margin-top: 100rpx;
+  position: relative;
+}
+
+.status-box {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.status-image {
+  width: 126rpx;
+  height: 126rpx;
+}
+
+.status-text {
+  text-align: center;
+  font-size: 30rpx;
+  font-family: Adobe Heiti Std;
+  font-weight: normal;
+  color: rgba(51, 51, 51, 1);
+}
+.delete-image{
+  width: 36rpx;
+  height: 36rpx;
+  position: absolute;
+  top: -9rpx;
+  right: -9rpx;
+}
+.image-box-item{
+  position: relative;
+  margin-right: 10rpx;
+}
+.btn{
+  margin-top: 400rpx;
+  width: 300rpx !important;
+  background:linear-gradient(90deg,rgba(58,125,253,1),rgba(76,115,239,1));
+  color: white;
+}
+.upload-btn{
+  width: 200rpx!important;
+  padding: 10rpx!important;
+  margin: 20rpx 0!important;
+  color:#fff;
+  background: #ffa500;
+  font-weight: normal;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 30rpx;
+}

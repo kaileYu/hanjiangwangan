@@ -1,0 +1,66 @@
+/* pages/welfareList/welfareList.wxss */
+.welfare-list {
+  width: 650rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 30rpx;
+  justify-content: space-between;
+}
+
+.welfare-list-item {
+  align-items: center;
+  margin-top: 27rpx;
+}
+
+.welfare-list-item-box {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.welfare-list-image {
+  width: 300rpx;
+  height: 200rpx;
+  border-radius: 10px;
+}
+
+.welfare-list-title {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.welfare-list-textcell {
+  display: flex;
+}
+
+.welfare-list-demand,
+.welfare-list-value {
+  flex: 1;
+  font-size: 20rpx;
+  font-weight: 400;
+}
+
+.welfare-list-demand {
+  color: rgba(242, 83, 83, 1);
+}
+
+.welfare-list-value {
+  color: rgba(153, 153, 153, 1);
+}
+
+.welfare-list-remain {
+  text-align: end;
+  flex: 1;
+  font-size: 20rpx;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.bottom {
+  font-size: 24rpx;
+  font-family: Alibaba PuHuiTi;
+  font-weight: 400;
+  color: rgba(207, 207, 207, 1);
+  text-align: center;
+}

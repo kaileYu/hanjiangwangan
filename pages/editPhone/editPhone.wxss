@@ -1,0 +1,46 @@
+/* pages/editPhone/editPhone.wxss */
+.edit-item {
+  width: 690rpx;
+  height: 109rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10rpx;
+  margin: 30rpx auto 0 auto;
+}
+
+.edit-item {
+  display: flex;
+}
+
+.edit-input {
+  height: 109rpx;
+  line-height: 109rpx;
+  width: 85%;
+  padding-left: 40rpx;
+  font-size: 30rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 14px;
+}
+
+.edit-image {
+  width: 40rpx;
+  height: 40rpx;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.edit-bottom{
+  position: fixed;
+  bottom: 0;
+  width: 750rpx;
+  height: 100rpx;
+  background: linear-gradient(90deg, rgba(58, 125, 253, 1), rgba(76, 115, 239, 1));
+}
+.edit-bottom-btn {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, rgba(58, 125, 253, 1), rgba(76, 115, 239, 1));
+  color: white;
+}

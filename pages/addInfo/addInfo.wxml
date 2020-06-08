@@ -1,0 +1,52 @@
+<!--添加线索页面-->
+<!-- 头部标题图片 -->
+<view class="add-info-header">
+  <image src="../../images/add-info.png"></image>
+</view>
+<!-- 添加的内容 -->
+<view class="add-info-content">
+  <view class="info-content-title space-between-center">
+  标题： <input value="{{title}}" class="input-title" bindblur="titleInput" maxlength="32"></input>
+  </view>
+  <view class="info-content-content">
+    <view class="flex-between">
+      <view class="wd-150">
+        {{type==1?'线索内容：': type==2? '咨询内容：' : '建议内容：'}}
+      </view>
+      <textarea value="{{content}}" class="input-content ml-30 flex-1" maxlength="256" bindblur="contentInput"/>
+    </view>
+    <view class="flex mt-30">
+      <view class="wd-150">
+       图片上传：
+       <view class="gray">({{images.length ? images.length : 0}}/9)</view>
+      </view>
+      <!-- 图片预览框 -->
+      <view class="ml-30 flex-1">
+        <view class="flex image-upload-box">
+          <block wx:for="{{images}}" wx:key="url">
+            <view class="image-item">
+              <image src="{{item.url}}" mode="aspectFill"  bindtap="previewImage" id="{{item.url}}"/>
+              <image src="../../images/svg/delete.svg" id="{{item.url}}" catchtap="removeImage" class="remove-image" wx-if="{{!uploadding}}"></image>
+            </view>
+          </block>
+          <view  wx:if="{{images.length<9 && !uploadding}}">
+            <view class="upload-image center" wx:if="{{images.length<9 && !uploadding}}">
+              <image src="../../images/svg/add.svg" bindtap="chooseImage"></image>
+            </view>
+            <view class="mt-24 extra-info">点击添加照片</view>
+          </view>
+        </view>
+       <view class="center">
+          <button wx:if="{{images.length>0}}" disabled="{{uploadding}}" class="upload-btn" bindtap="uploadBtn">{{uploadText}}</button>
+       </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 提交信息按钮 -->
+<view class="submit-btn flex">
+  <button class="flex_1 cancle-color" catchtap="cancleBack">取消</button>
+  <button class="flex_1 submit-color" disabled="{{submitting}}" catchtap="submitBtn">提交</button>
+</view>
+

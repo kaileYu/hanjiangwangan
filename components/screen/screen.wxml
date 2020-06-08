@@ -1,0 +1,13 @@
+<!--components/screen/screen.wxml-->
+<view class="screen-guide" wx:if="{{userInfo == undefined? true : false}}">
+	<swiper class="screen-guide-bannar" indicator-dots indicator-color="#E6E6E6" indicator-active-color="#4C73EF" bindchange="changeFlag">
+		<swiper-item>
+			<image class="screen-guide-image" src="/images/screenGuide-1.png" />
+		</swiper-item>
+		<swiper-item class="swiper-item">
+			<image class="screen-guide-image"  src="/images/screenGuide-2.png"/>
+			<view class="screeen-guide-image-text">线索意见，在线上传</view>
+			<button class="start" bindtap="start">立即体验</button>
+		</swiper-item>
+	</swiper>
+</view>

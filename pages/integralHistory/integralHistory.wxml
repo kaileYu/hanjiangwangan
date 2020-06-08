@@ -1,0 +1,15 @@
+<!--pages/integralHistory/integralHistory.wxml-->
+<view class="integral">
+	<view class="integral-item" wx:for="{{showList}}" wx:key="index" data-index="{{index}}">
+		<view class="integral-item-time">{{item.createTime}}</view>
+		<view class="integral-item-bottom">
+				<image class="integral-item-bottom-image" mode="aspectFill" src="{{image[index]}}"></image>
+				<view class="integral-item-bottom-info">
+					<view class="integral-item-bottom-info-title">{{item.title}}</view>
+					<view class="integral-item-bottom-info-num">x1</view>
+				</view>
+				<view class="point">{{item.num}}积分</view>
+		</view>
+	</view>
+	<view wx:if="{{showList.length == 0}}" class="noneRecord">你还没有兑换记录</view>
+</view>

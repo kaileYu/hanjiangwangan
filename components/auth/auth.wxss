@@ -1,0 +1,25 @@
+/* components/auth/auth.wxss */
+@import "../../app.wxss";
+
+.auth-contain{
+  padding: 30rpx;
+  width: calc(100% - 60rpx);
+}
+.auth-contain-image{
+  width:100%;
+  padding-bottom:20rpx;
+  border-bottom: 2rpx solid #ccc;
+}
+.auth-contain-image image{
+  height:300rpx;
+}
+.auth-contain-text {
+  font-size: 26rpx;
+  padding: 20rpx;
+}
+.auth-btn{
+  margin-top: 50rpx;
+  border-radius: 50rpx;
+  background:rgb(27,185,79);
+  color: #fff;
+}

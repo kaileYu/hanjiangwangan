@@ -1,0 +1,71 @@
+<!--components/home/home.wxml-->
+<!-- 首页欢迎页面 -->
+
+<view class="home-title">
+  <!-- 头像 -->
+  <view class="home-title-avater space-between-center">
+    <view class="flex-center">
+      <image src="{{userInfo.avatarUrl}}" class="user-avater"></image>
+      <view class="ml-30">您好! {{userInfo.nickName}}</view>
+    </view>
+    <image class="user-mail" src="../../images/mail.png"></image>
+    <!-- <view class="mail-num"></view> -->
+  </view>
+
+  <!-- 资讯 -->
+  <view class="notice-board">
+    <view class="notice-board-header">网安资讯</view>
+    <!-- 公告板上面的黑条 -->
+    <view class="notice-board-top"></view>
+    <view class="notice-board-bottom"></view>
+    <!-- 公告板里面的内容 -->
+    <!-- <view class="notice-board-content">
+      <scroll-view scroll-y="true" style="height:100%;width:100%" scroll-top="{{scrollTop}}" lower-threshold="1" scroll-into-view="{{toView}}" bindscrolltolower="gobackTop" bindscrolltoupper="gotoButtom">
+        <block wx:for="{{noticeList}}" wx:key="index">
+        <view class="notice-board-content-item" id="item{{index}}">{{item.title}}</view>
+        </block>
+      </scroll-view> 
+    </view> -->
+    <view class="notice-board-content">
+      <swiper class="notice-board-content-swiper" autoplay vertical display-multiple-items="3" interval="2000">
+        <block class="notice-board-content-swiper-item" wx:for="{{noticeList}}" wx:key="index">
+        <swiper-item>
+          <view class="notice-board-content-item">{{item.title}}</view>
+        </swiper-item>
+        </block> 
+      </swiper>
+    </view>
+  </view>
+</view>
+
+<!-- banner 图片 -->
+<swiper autoplay="true" interval="2000">
+  <block wx:for="{{bannerList}}" wx:key="*this">
+    <swiper-item>
+      <view class="home-banner">
+        <image src="{{item.image}}"></image>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 网安警务处 -->
+<view class="home-content">
+  <image src="../../images/bg-content.png" />
+  <view class="notice-board-header">网安警务室</view>
+  <view class="home-main-content">
+    <block wx:for="{{internetSecurity}}" wx:key="index">
+      <view class="flex-1 internet-security">
+        <view>{{item.title}}</view>
+        <view class="flex-center">
+          <block wx:for="{{item.menuList}}" wx:key="index" wx:for-item="content">
+          <view class="home-main-content-item" catchtap="gotoDetailPage" data-item="{{content}}">
+            <image src="{{content.icon}}"></image>
+            <view>{{content.title}}</view>
+          </view>
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+

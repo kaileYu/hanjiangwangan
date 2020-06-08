@@ -1,0 +1,67 @@
+<!--pages/netizenVoice/netizenVoice.wxml-->
+<!-- 网民发声页面 -->
+<swiper autoplay="true" interval="2000" class="voice-banner">
+  <block wx:for="{{bannerList}}" wx:key="*this">
+    <swiper-item>
+      <view class="voice-banner">
+        <image src="{{item.image}}" mode="aspectFill"></image>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+
+<sliderTab tabList="{{tabList}}" bind:changeTab="changeTab" swiperHeight="{{swiperHeight}}">
+<block wx:for="{{tabList}}" wx:key="index">
+  <view slot="swiper-content-{{index}}" class="tab-list-item" id="swiper-content-height-{{item.id}}">
+    <view class="space-between-center">
+        <input placeholder="输入关键词" value="{{keywords}}" bindinput="inputChange" bindblur="loseBlur" bindconfirm="sendComment" placeholder-style="color:#999999;font-size: 30rpx;"></input>
+        <button bindtap="query">查询</button>
+    </view>
+    <block wx:for="{{voideList}}" wx:key="index">
+      <view class="voide-list-item" catchtap="goToVoiceDetail" data-voiceid="{{item.voiceId}}" wx:if="{{item.examineStatus == 1}}">
+        <view class="voice-item-pic center">
+          <image src="{{item.type==1?'../../images/voice-icon/illegal.png' : item.type==2 ? '../../images/voice-icon/legal.png' : '../../images/voice-icon/suggestions.png'}}" mode="aspectFit"></image>
+        </view>
+        <!-- 内容部分 -->
+        <view class="voice-item-content">
+          <view class="flex-center">
+            <view class="voice-item-title">{{item.title}}</view>
+            <view class="voice-item-status {{item.dealStatus==0 ? 'yellow' :  item.dealStatus==1 ? 'blue':'red'}}">{{item.dealStatus==0? '待处理': item.dealStatus==1 ? '已处理':'不处理'}}</view>
+            <icon wx:if="{{currentId == 0}}" class="icon" icon="delete" type="outline" color="rgba(102, 102, 102, 1)" size="{{16}}" catchtap="deleteVoice" data-id="{{item.voiceId}}" style="margin-left: 40rpx"></icon>
+          </view>
+          <view class="space-between-center see-more">
+            <view>点击查看</view>
+            <wxs module="m1">
+              function format(ts) {
+                var d = getDate(ts)
+                return [d.getFullYear(), d.getMonth()+1, d.getDate()].join('-')
+                  + ' '
+                  + [d.getHours(), d.getMinutes(), d.getSeconds()].join(':')
+              }
+              module.exports.format = format
+            </wxs>
+            <view>{{m1.format(item.createTime)}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class="nothing-pic" wx:if="{{!voideList.length || voideList.length<=0}}">
+      <image src="../../images/nothing.png"></image>
+    </view>
+  </view>
+</block>
+</sliderTab>
+
+<block>
+  <view class="bottom-add-info" wx:if="{{showBottom}}">
+    <block wx:for="{{addInfoList}}" wx:key="index">
+      <view class="bottom-add-info-item" catchtap="goToAddPage" data-id="{{item.type}}">
+        <image src="{{item.icon}}" mode="aspectFit"></image>
+        <view>{{item.title}}</view>
+      </view>
+    </block>
+  </view>
+</block>
+
+
+

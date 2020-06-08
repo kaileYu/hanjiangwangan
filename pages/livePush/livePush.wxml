@@ -1,0 +1,47 @@
+<!--pages/livePush/livePush.wxml-->
+<live-pusher id="pusher" url="{{liveUrl}}" mode="HD" autopush min-bitrate='800' max-bitrate='1500' bindstatechange="statechange" style="width: 750rpx; height: 100vh" device-position="{{isFront ? 'font' : 'back'}}" beauty="{{beauty}}" whiteness="{{whiteness}}" />
+<view catchtap="hideSlider">
+	<view class="live-top space-between-center">
+		<view class="show-live space-between-center">
+			<view class="circle"></view>
+			直播
+		</view>
+		<view bindtap="closeLive">
+			关闭
+		</view>
+	</view>
+
+	<view class="able-move-area">
+		<view class="able-move-item">
+			<scroll-view class="able-move-item-content" scroll-y="true" scroll-into-view="{{toLast}}">
+				<block wx:for="{{allContentList}}" wx:key="index">
+					<view class="content-item" id="item{{index}}">
+						<view class="speaker-info flex-center">
+							<image src="{{item.userAvatar}}"></image>
+						</view>
+						<view class="flex-1"><text class="content-item-name">{{item.userName}}：</text>{{item.content}}</view>
+						<!-- <view class="flex-1">你好呀{{item.content}}</view> -->
+					</view>
+				</block>
+			</scroll-view>
+			<!-- <view class="able-move-item-sendinput">
+      <input value="{{barrageContent}}" class="able-move-item-input" bindconfirm="sendBarrage" bindinput="content" maxlength="40" confirm-type="send" focus="{{focus}}" bindfocus="onFocus"></input>
+      <view class="able-move-item-sendbtn" bindtap="btnsendBarrage">
+        <image class="able-move-item-sendbtn-image" src="/images/live-icon/send.png" style="width: 40rpx;height: 40rpx" mode="aspectFill"></image>
+      </view>
+    </view> -->
+		</view>
+	</view>
+	<view class="beauty">
+		<view class="beauty-btn" catchtap="setBeauty">
+			<image class="beauty-img" src="../../images/beauty.png" mode="aspectFill"></image>
+			<view class="beauty-text">美颜</view>
+		</view>
+		<view class="beauty-btn" catchtap="setWhiteness">
+			<image class="beauty-img" src="../../images/whiteness.png" mode="aspectFill"></image>
+			<view class="beauty-text">美白</view>
+		</view>
+	</view>
+	<slider wx:if="{{beautyFlag}}" class="beauty-slider" min="0" max="9" show-value value="{{beauty}}" bindchange="getBeauty" bindchanging="beauty"></slider>
+	<slider wx:if="{{whitenessFlag}}" class="whiteness-slider" min="0" max="9" show-value value="{{whiteness}}" bindchange="getWhiteness" bindchanging="whiteness"></slider>
+</view>

@@ -1,0 +1,78 @@
+<!--pages/livePlay/livePlay.wxml-->
+<live-player src="{{liveUrl}}" mode="RTC" autoplay bindstatechange="statechange" binderror="error" style="width: 750rpx; height: 420rpx;" object-fit='{{fit}}' orientation='{{orientation}}' id="livePlay" class="live-play">
+  <view class="live-text">直播</view>
+  <view class="live-setting space-between-center">
+    <view class="live-setting-left flex-center">
+      <!-- 点击播放按钮 -->
+      <block>
+      <image wx:if="{{playStatus}}" class="mr-30" src="../../images/live-icon/pause.png" mode="aspectFit" catchtap="changePlayStatus"></image>
+      <image wx:else class="mr-30" src="../../images/live-icon/play.png" mode="aspectFit" catchtap="changePlayStatus"></image>
+      </block>
+      <!-- 点击刷新视频 -->
+      <image class="mr-40" src="../../images/live-icon/refresh.png" mode="aspectFit"></image>
+
+      <!-- 点击改变弹幕状态 -->
+      <block>
+        <image wx:if="{{!barrageStatus}}" src="../../images/live-icon/no-barrage.png" mode="aspectFit" catchtap="changeBarrageStatus"></image>
+        <image wx:else src="../../images/live-icon/barrage.png" mode="aspectFit" catchtap="changeBarrageStatus"></image>
+      </block>
+    </view>
+
+    <view class="live-setting-right flex-center">
+      <!-- <view class="mr-30">{{playTime}}</view> -->
+      <!-- 点击切换全屏 -->
+      <block>
+        <image wx:if="{{!isFullScreen}}" src="../../images/live-icon/full-screen.png" mode="aspectFit" catchtap="changeScreenStatus"></image>
+        <image wx:else src="../../images/live-icon/zoom-screen.png" mode="aspectFit" catchtap="changeScreenStatus"></image>
+      </block>
+    </view>
+    
+  </view>
+<!-- 弹幕框 -->
+  <view class="fly-barrage">
+			<canvas wx:if="{{version === 'v2'}}" type="2d" id="BarrageCanvas" style="width: 100%; height: 80%;"></canvas>
+			<canvas wx:else canvas-id="BarrageCanvas" id="BarrageCanvas" style="width: 100%; height: 80%;"></canvas>
+		</view>
+</live-player>
+
+<view class="live-tab flex-center">
+  <view class="mr-100 {{currentTab == 0 ? 'actived': ''}}" catchtap="changeTab" data-id="0">互动</view>
+  <view class="{{currentTab == 1 ? 'actived': ''}}" catchtap="changeTab" data-id="1">主播</view>
+</view>
+<!-- 标签下面的内容 -->
+<view>
+  <swiper class="scroll-view_H" current="{{currentTab}}" scroll-x="true" bindchange="changeSwiper" style="width: 100%">
+    <swiper-item item-id="tabveiw1" class="interactive">
+    <!-- 互动详情 -->
+      <scroll-view class="chat-box-item" scroll-y="true" scroll-into-view="{{toLast}}">
+        <view class="chat-box-item-warn red pt_10">
+          【直播公告】为了维护直播氛围，请勿直播色情，暴力，反动内容哦，涉及违规将被封禁账号哦
+        </view>
+        <block wx:for="{{allContentList}}" wx:key="index">
+          <view class="chat-box-content-item" id="chat-item{{index}}">
+            <view class="flex-center">
+              <image src="{{item.userAvatar}}"></image>
+            </view>
+            <view class="flex-1">{{item.userName}}：{{item.content}}</view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item item-id="tabveiw2"  class="anchor">
+    <!-- 主持人详情 -->
+      <view class="anchor-info flex-center">
+        <image src="{{liveInfo.userAvatar}}"></image>
+        <view class="flex-1">
+          <view class="anchor-name">{{liveInfo.userName}}</view>
+          <view class="anchor-introduction">{{liveInfo.introduction}}</view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+ <!-- 输入框 -->
+<view wx:if="{{currentTab == 0}}" class="input-box space-between-center" style="bottom: {{keyHeight + 2}}px">
+  <input class="flex-1" value="{{sendMessage}}" adjust-position='{{false}}' bindfocus="getHeight" bindblur="loseBlur" bindconfirm="sendBarrage"></input>
+  <image src="../../images/live-icon/send.png" catchtap="btnsendBarrage"></image>
+</view>
+

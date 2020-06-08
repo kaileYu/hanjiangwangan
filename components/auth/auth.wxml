@@ -1,0 +1,12 @@
+<!--components/auth/auth.wxml-->
+<view class="auth-contain">
+  <view class="center auth-contain-image">
+    <image mode="aspectFit" src="../../images/hanjiang_icon.png"></image>
+  </view>
+  <view class="auth-contain-text">
+    请授权允许邗江网安获取你的微信信息
+  </view>
+  <button class="auth-btn" disabled="{{userInfoDisable}}" wx:if="{{!islogin}}" open-type="getUserInfo" hover-class='btnText_hover'
+    bindgetuserinfo='login'>授权微信</button>
+  <button class="auth-btn" disabled="{{phoneDisable}}" wx:if="{{islogin}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
+</view>

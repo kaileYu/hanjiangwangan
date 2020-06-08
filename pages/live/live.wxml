@@ -1,0 +1,52 @@
+<!-- 田小二直播页面 -->
+
+<!-- 直播页面头部图片 -->
+<view class="live-header">
+  <image src="../../images/fraud.png"></image>
+</view>
+
+<!-- 直播列表标题 -->
+<view class="live-list-title space-between-center">
+  <view>正在直播</view>
+  <view class="flex-center" catchtap="gotoSeeMore">
+    查看更多
+    <image src="../../images/svg/right-arrow.svg"></image>
+  </view>
+</view>
+
+<!-- 直播列表内容 -->
+<view class="live-list">
+  <block wx:for="{{liveList}}" wx:key="index">
+    <view class="live-list-item" catchtap="enterLivingRoom" id="{{item.liveId}}">
+      <view class="cover-image">
+        <image src="{{item.cover}}" mode="scaleToFill"></image>
+        <view class="host-info space-between-center">
+          <view>{{item.userName}}</view>
+          <view class="flex-center">
+            <image src="../../images/svg/people.svg"></image>
+            {{item.userNum + 100}}
+          </view>
+        </view>
+      </view>
+      <view class="live-content">
+        <view class="live-title">{{item.title}}</view>
+        <view class="live-classify">{{item.introduction}}</view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<!-- 暂无直播的详情图 -->
+<view class="no-live-status center" wx:if="{{liveList.length<1}}">
+  <view>
+    <image src='../../images/nodata.png'></image>
+    <view>暂无直播</view>
+  </view>
+</view>
+
+<!-- 开播按钮 -->
+<view wx:if="{{hasLive}}" class="start-live-btn" catchtap="startLive">开播</view>
+
+
+
+

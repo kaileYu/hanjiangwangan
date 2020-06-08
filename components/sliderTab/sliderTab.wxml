@@ -1,0 +1,21 @@
+<!--components/ sliderTab/sliderTab.wxml-->
+<!-- 滑块组件 -->
+<view class="tab-header">
+  <scroll-view scroll-x="true" class="tab-scroll-view" scroll-into-view="{{toView}}">
+    <block wx:for="{{tabList}}" wx:key="index">
+      <view id="tab-item-{{index}}" bindtap="changeTab" data-index="{{index}}" class="tab-item {{currentIndex==index ? 'active': ''}}">{{item.name}}</view>
+    </block>
+  </scroll-view>
+</view>
+
+<view class="tab-content">
+  <swiper current="{{currentIndex}}" scroll-x="true" bindchange="changeSwiper" style="width: 100%;height: {{swiperHeight}}">
+    <block wx:for="{{tabList}}" wx:key="index">
+      <swiper-item item-id='swiper-item-{{item.id}}'>
+        <!-- 插槽内容 -->
+        <slot name="swiper-content-{{index}}" class="scroll-view_H"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+

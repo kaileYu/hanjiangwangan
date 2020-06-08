@@ -1,0 +1,124 @@
+/* pages/livePush/livePush.wxss */
+.live-top{
+  width:100%;
+  height: 120rpx;
+  font-size: 28rpx;
+  color:#fff;
+  box-sizing: border-box;
+  padding: 23rpx 42rpx 23rpx 22rpx;
+  position: absolute;
+  top: 0;
+  z-index: 33;
+}
+.show-live {
+  border:2rpx solid rgba(66,121,247,1);
+  border-radius:10rpx;
+  width:140rpx;
+  height: 54rpx;
+  box-sizing: border-box;
+  padding: 14rpx;
+}
+.circle{
+  width:32rpx;
+  height:32rpx;
+  background:rgba(66,121,247,1);
+  border-radius:50%;
+}
+
+.able-move-area{
+  position: absolute;
+  width:100%;
+  height:100vh;
+  bottom: 10%;
+  left:0;
+  background:rgba(255, 102, 102, 0);
+}
+.able-move-item{
+  width: 450rpx;
+  max-height: 50vh;
+  background:rgba(255,255,255,0);
+  position:fixed;
+  bottom: 10px;
+  left:10px;
+  overflow-y: auto;
+
+}
+.able-move-item-sendinput{
+  width: 100%;
+  display: flex;
+}
+.able-move-item-input{
+  position: relative;
+  height: 60rpx;
+  background: #fff;
+  border-radius: 20px 0 0 20px;
+  padding-left: 10px;
+  flex: 5;
+}
+.able-move-item-sendbtn{
+  position: relative;
+  background: #fff;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 0 20px 20px 0;
+  flex: 1;
+}
+.able-move-item-sendbtn-image{
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%,-50%);
+}
+.able-move-item-content{
+  width:100%;
+  height:auto;
+}
+.able-move-item-content .content-item {
+  padding:3px 10px;
+  font-size:14px;
+  line-height: 20px;
+  color:#fff;
+  display: flex;
+  align-items: flex-start;  
+}
+.able-move-item-content .content-item-name {
+  color: #3e70a6;
+  display: inline-block;
+  line-height: 20px;
+}
+.speaker-info image{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+.beauty{
+  width: 60rpx;
+  height: 160rpx;
+  position: absolute;
+  top: 30%;
+  right: 20px;
+}
+.beauty-btn{
+  padding-bottom: 30rpx;
+}
+.beauty-img{
+  height: 60rpx;
+  width: 60rpx;
+}
+.beauty-text{
+  font-size: 26rpx;
+  color: white;
+}
+.beauty-slider,.whiteness-slider{
+  position: absolute;
+  width: 70%;
+  height: 30rpx;
+  left: 5%;
+}
+.beauty-slider{
+  top: 31%;
+}
+.whiteness-slider{
+  top: 40%;
+}

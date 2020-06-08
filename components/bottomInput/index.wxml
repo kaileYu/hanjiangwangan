@@ -1,0 +1,5 @@
+<!--components/bottomInput/index.wxml-->
+<view class="bottom-input-box" style="bottom: {{keyHeight + 2}}px">
+  <input value="{{inputDetail}}" focus="{{focus}}" class="bottom-input" adjust-position='{{false}}' bindfocus="getHeight" bindinput="inputChange" bindblur="loseBlur" bindconfirm="sendComment" placeholder="{{placeholder}}" placeholder-style="color:#CFCFCF; font-size: 30rpx;"></input>
+  <button bindtap="btnSendComment" disabled="{{btnDisable}}">发送</button>
+</view>

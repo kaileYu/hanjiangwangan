@@ -1,0 +1,68 @@
+<!--components/my/my.wxml-->
+<view class="my">
+	<view>
+		<view class="my-info">
+			<view class="myinfo-left">
+				<view class="myinfo-avatar">
+					<image src="{{userInfo.avatarUrl}}" class="avatar"></image>
+				</view>
+				<view class="myinfo-name">
+					<view class="myinfo-nickname">{{userInfo.nickName}}</view>
+					<view class="myinfo-name-info" bindtap="gotoMyinfo">我的信息 ></view>
+				</view>
+			</view>
+			<view class="myinfo-right">
+				<view class="myinfo-integral" bindtap="gotoIntegralHistory">
+					<view class="myinfo-integral-integral">我的积分
+						<text class="integral">{{point}}</text>
+					</view>
+					<view class="myinfo-integral-record" bindtap="gotoIntegralHistory">兑换记录 ></view>
+				</view>
+			</view>
+		</view>
+		<view class="promote">
+			<view class="promote-top">
+				<view class="promote-top-left">
+					<view class="promote-title">全民推广季</view>
+					<view class="promote-intro">赚积分 换礼品</view>
+				</view>
+				<view class="promote-top-right">规则说明<icon icon="help" size="{{15}}" color="rgba(153,153,153,1)" class="icon"></icon>
+				</view>
+			</view>
+			<view class="promote-bottom">
+        <block wx:for="{{mySubmitList}}" wx:key="index">
+          <view class="promote-bottom-item" data-path="{{item.path}}" data-type="{{item.type}}" bindtap="goToMyInfo">
+            <image src="{{item.icon}}" class="promote-bottom-image" mode="aspectFit"></image>
+            <view class="promote-botton-text">{{item.title}}</view>
+          </view>
+        </block>
+			</view>
+		</view>
+	</view>
+	<view class="welfare">
+		<view class="promote-top">
+			<view class="promote-top-left">
+				<view class="promote-title">积分福利</view>
+				<view class="promote-intro">用积分换取您心仪的礼物</view>
+			</view>
+			<view class="promote-top-right" bindtap="gotoList">查看更多 ></view>
+		</view>
+		<view class="welfare-list">
+			<view class="welfare-list-item" wx:for="{{showList}}" wx:key="index" bindtap="gotoDetail" data-id="{{item.welfareId}}"> 
+				<view class="welfare-list-item-box">
+					<image class="welfare-list-image" src="{{item.image}}" mode="aspectFill"></image>
+					<view class="welfare-list-title">{{item.title}}</view>
+					<view class="welfare-list-textcell">
+						<view class="welfare-list-demand">{{item.point}}积分</view>
+						<view class="welfare-list-remain">已兑换{{item.exchangeNum}}件</view>
+					</view>
+					<view class="welfare-list-textcell">
+						<view class="welfare-list-value">价值：{{item.price}}元</view>
+						<view class="welfare-list-remain">还剩余{{item.surplusNum}}件</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="my-bottom">—— 加载完毕 ——</view>
+</view>

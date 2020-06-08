@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/addInfo/addInfo",
+    "pages/live/live",
+    "pages/liveSetting/liveSetting",
+    "pages/livePush/livePush",
+    "pages/livePlay/livePlay",
+    "pages/fraud/fraud",
+    "pages/fraudDetail/fraudDetail",
+    "pages/lvprotectDetail/lvprotectDetail",
+    "pages/lvprotectRecord/lvprotectRecord",
+    "pages/netizenVoice/netizenVoice",
+    "pages/alert/alert",
+    "pages/welfareList/welfareList",
+    "pages/welfareDetail/welfareDetail",
+    "pages/voiceDetail/voiceDetail",
+    "pages/welfareExchange/welfareExchange",
+    "pages/successMsg/successMsg",
+    "pages/myInfo/myInfo",
+    "pages/editPhone/editPhone",
+    "pages/myVoiceList/myVoiceList",
+    "pages/myApplicationList/myApplicationList",
+    "pages/integralHistory/integralHistory",
+    "pages/myAppDetail/myAppDetail",
+    "pages/qrcode/qrcode"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "plugins": {
+    "wxparserPlugin": {
+      "version": "0.3.0",
+      "provider": "wx9d4d4ffa781ff3ac"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+<!--pages/lvprotectDetail/lvprotectDetail.wxml-->
+<view class="lvprotectDetail">
+	<block>
+		<rich-text nodes='<div class="lvprotectDetail-cell"><div class="text-area"><div class="text-area-content">{{data.content}}</div></div></div>'>
+		</rich-text>
+	</block>
+	<view class="lvprotectDetail-bottom" bindtap="gotoRecord" wx:if="{{moudleId == '5df665e39d5640b3'? false : true}}">点我进行登记</view>
+</view>

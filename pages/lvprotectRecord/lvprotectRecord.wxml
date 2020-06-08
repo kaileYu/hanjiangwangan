@@ -1,0 +1,62 @@
+<!--pages/lvprotectRecord/lvprotectRecord.wxml-->
+<view class="lvprecord">
+	<view class="lvprecord-top">
+		<image class="lvprecord-top-image" src="/images/lvprotect-top-image.png" mode="aspectFill"></image>
+	</view>
+	<view class="form">
+		<view class="form-top">
+			<label class="form-top-name">单位名称：</label>
+			<picker class="form-top-name-input" bindchange="bindPickerChange" mode="selector" range="{{allList}}" range-key="name">
+				<view class="picker">{{allList[index].name}}</view>
+			</picker>
+		</view>
+		<view class="form-bottom" wx:if="{{moudleId == 'b3c0d8eb9bc81b05'}}" wx:for="{{levelProtectionList}}" wx:key='index' data-index="{{dindex}}">
+			<scroll-view scroll-y="true" class="scroll">
+				<view class="form-bottom-item">
+					<label class="form-bottom-item-name">信息系统名称：</label>
+					<input class="form-bottom-item-input" data-index="{{index}}" bindtap="getIndex" bindblur="getsysname"></input>
+				</view>
+				<view class="form-bottom-item">
+					<label class="form-bottom-item-name">等级：</label>
+					<input class="form-bottom-item-input" bindblur="getlevel" bindtap="getIndex" data-index="{{index}}" type="number"></input>
+				</view>
+				<view class="form-bottom-item">
+					<label class="form-bottom-item-name">证书编号：</label>
+					<input class="form-bottom-item-input" bindblur="getcode" bindtap="getIndex" data-index="{{index}}"></input>
+				</view>
+				<view class="form-bottom-item">
+					<label class="form-bottom-item-name">证书上传：</label>
+					<view class="form-bottom-add-image" bindtap="getIndex" data-index="{{index}}">
+						<view wx:for="{{item.filePath}}" wx:key="index" class="add-image">
+							<image class="add-image-image" src="{{item}}"></image>
+							<image wx:if="{{flag}}" class="add-image-delete" catchtap="deleteImage" data-index="{{index}}" mode="aspectFill" src="/images/svg/delete.svg"></image>
+						</view>
+						<image wx:if="{{item.filePath.length < 9}}" class="add-image" src="/images/svg/add.svg" mode="aspectFill" bindtap="chooseImage"></image>
+					</view>
+				</view>
+				<view wx:if="{{item.filePath.length == 0}}" class="form-bottom-text">点击图片，上传证书照片</view>
+				<view  data-index="{{index}}" bindtap="getIndex" wx:else>
+					<button class="upload-image" bindtap="uploadImage" disabled="{{item.uploadding}}" data-index="{{index}}">{{item.uploadText}}</button>
+				</view>
+			</scroll-view>
+		</view>
+		<view wx:for="{{networkAppList}}" class="form-bottom" wx:key="index" wx:if="{{moudleId == '61ef7175647d6d25'}}">
+			<view class="form-bottom-item">
+				<label class="form-bottom-item-name">应用名称：</label>
+				<input class="form-bottom-item-input" placeholder="请输入应用位名称" data-index="{{index}}" bindtap="getIndex" bindblur="getAppName"></input>
+			</view>
+			<view class="form-bottom-item">
+				<label class="form-bottom-item-name">应用简介：</label>
+				<textarea class="form-bottom-item-textarea" placeholder="请输入应用简介" data-index="{{index}}" bindtap="getIndex" bindinput="addNum"></textarea>
+			</view>
+		</view>
+	</view>
+	<view class="add" wx:if="{{num != 9}}">
+		<view class="add-add" bindtap="add">
+			<view class="add-add-row"></view>
+			<view class="add-add-colunm"></view>
+		</view>
+		<view class="add-text">添加新系统</view>
+	</view>
+	<view class="commit" bindtap="commit">提交</view>
+</view>

@@ -1,0 +1,147 @@
+/* pages/welfareExchange/welfareExchange.wxss */
+.welfare-exchange {
+  width: 690rpx;
+  height: 310rpx;
+  background: white;
+  margin: 30rpx auto 0 auto;
+}
+
+.welfare-exchange-info {
+  display: flex;
+  margin: 0 0 30rpx 15rpx;
+}
+
+.welfare-exchange-image {
+  width: 136rpx;
+  height: 136rpx;
+  border-radius: 50%;
+  margin-top: 30rpx;
+}
+
+.welfare-exchange-title {
+  margin: 55rpx 0 0 50rpx;
+}
+
+.title,
+.num {
+  font-size: 30rpx;
+  font-family: Alibaba PuHuiTi;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.num {
+  margin-top: 30rpx;
+}
+
+.welfare-exchange-line {
+  width: 650rpx;
+  height: 1rpx;
+  background: rgba(219, 219, 219, 1);
+  border-radius: 1rpx;
+  margin: 0 auto;
+}
+
+.welfare-exchange-value {
+  display: flex;
+  margin: 40rpx 20rpx 0 20rpx;
+}
+
+.welfare-exchange-value-title,
+.welfare-exchange-value-point {
+  font-size: 30rpx;
+  font-family: Alibaba PuHuiTi;
+  font-weight: 400;
+  flex: 1;
+}
+
+.welfare-exchange-value-title {
+  color: rgba(153, 153, 153, 1);
+}
+
+.welfare-exchange-value-point {
+  color: rgba(51, 51, 51, 1);
+  text-align: end;
+}
+
+.address {
+  width: 690rpx;
+  height: 326rpx;
+  background: white;
+  border-radius: 10rpx;
+  margin: 30rpx auto 0 auto;
+}
+
+.address-item {
+  height: 108rpx;
+  width: 650rpx;
+  margin: 0 auto;
+  font-size: 30rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 108rpx;
+  border-bottom: 1rpx solid rgba(219, 219, 219, 1);
+  display: flex;
+}
+
+.address-item:nth-last-child(1) {
+  border-bottom: 0;
+}
+
+.address-item-input {
+  height: 108rpx;
+  width: 80%;
+  font-size: 30rpx;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  line-height: 14rpx;
+  text-align: end;
+}
+
+.label {
+  width: 20%;
+}
+
+.confirm {
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+}
+
+.confirm-left {
+  width: 511rpx;
+  background: white;
+  text-align: end;
+  padding-right: 25rpx;
+  padding-top: 20rpx;
+}
+.confirm-left-combined{
+  font-size: 28rpx;
+  color: rgba(153, 153, 153, 1);
+}
+.combined{
+  font-size: 30rpx;
+  color: red;
+}
+.confirm-left-point{
+  font-size: 48rpx;
+}
+.confirm-btn {
+  width: 240rpx !important;
+  height: 100rpx;
+  background: linear-gradient(90deg, rgba(58, 125, 253, 1), rgba(76, 115, 239, 1));
+  font-size: 36rpx;
+  font-family: Alibaba PuHuiTi;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+.confirm-btn-text{
+  width: 240rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}

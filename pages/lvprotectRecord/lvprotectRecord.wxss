@@ -1,0 +1,186 @@
+/* pages/lvprotectRecord/lvprotectRecord.wxss */
+.lvprecord-top,
+.lvprecord-top-image {
+  width: 750rpx;
+  height: 176rpx;
+  background: #ccc;
+}
+
+.form {
+  width: 690rpx;
+  margin: 30rpx auto 0 auto;
+}
+
+.form-top {
+  width: 690rpx;
+  height: 140rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10rpx;
+  display: flex;
+  position: relative;
+}
+
+.form-top-name {
+  font-size: 30rpx;
+  color: rgba(51, 51, 51, 1);
+  line-height: 140rpx;
+  padding-left: 21rpx;
+}
+
+.form-top-name-input {
+  width: 470rpx;
+  height: 60rpx;
+  border: 1rpx solid rgba(201, 201, 201, 1);
+  border-radius: 10rpx;
+  position: absolute;
+  left: 180rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.form-bottom {
+  width: 690rpx;
+  height: 550rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  margin-top: 20rpx;
+}
+.form-bottom:nth-last-child(1){
+  margin-bottom: 130rpx;
+}
+.scroll{
+  height: 550rpx;
+  width: 670rpx;
+  margin: 0 auto;
+}
+
+.form-bottom-item {
+  /* height: 60rpx; */
+  display: flex;
+  padding-top: 30rpx;
+}
+
+.form-bottom-item-name {
+  width: 210rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  font-weight: normal;
+  color: rgba(51, 51, 51, 1);
+  line-height: 60rpx;
+  text-align: end;
+}
+
+.form-bottom-item-input,picker {
+  width: 410rpx;
+  height: 60rpx;
+  border: 1rpx solid rgba(201, 201, 201, 1);
+  border-radius: 10rpx;
+  padding-left: 10rpx;
+  line-height: 60rpx;
+}
+.form-bottom-item-textarea{
+  width: 410rpx;
+  border: 1rpx solid rgba(201, 201, 201, 1);
+  border-radius: 10rpx;  
+  padding-left: 10rpx;
+}
+.num{
+  font-size: 20rpx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.form-bottom-add-image{
+  width: 456rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.add-image {
+  width: 140rpx;
+  height: 140rpx;
+  border: 1rpx solid rgba(201, 201, 201, 1);
+  border-radius: 10rpx;
+  position: relative;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
+  position: relative;
+}
+.add-image-delete{
+  position: absolute;
+  top: -14rpx;
+  right: -14rpx;
+  width: 28rpx;
+  height: 28rpx;
+}
+.add-image-image{
+  width: 140rpx;
+  height: 140rpx;
+}
+
+.form-bottom-text {
+  font-size: 20rpx;
+  font-family: Adobe Heiti Std;
+  font-weight: normal;
+  color: rgba(62, 123, 250, 1);
+  line-height: 30rpx;
+  margin-left: 210rpx;
+}
+
+.add {
+  margin-top: 40rpx;
+  margin-bottom: 120rpx;
+}
+
+.add-add {
+  width: 60rpx;
+  height: 60rpx;
+  border: 1rpx solid rgba(102, 102, 102, 1);
+  border-radius: 50%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.add-text {
+  text-align: center;
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+  line-height: 30rpx;
+  padding-top: 10rpx;
+}
+.add-add-row,.add-add-colunm{
+  background: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.add-add-row{
+  width: 26rpx;
+  height: 2rpx;
+}
+.add-add-colunm{
+  width: 2rpx;
+  height: 26rpx;
+}
+.commit{
+  height: 100rpx;
+  width: 750rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color: white;
+  background:linear-gradient(90deg,rgba(58,125,253,1),rgba(76,115,239,1));
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+}
+.upload-image{
+  width: 200rpx!important;
+  padding: 10rpx!important;
+  margin: 20rpx 0!important;
+  color:#fff;
+  background: #ffa500;
+  font-weight: normal;
+  position: relative;
+  left: 60%;
+}

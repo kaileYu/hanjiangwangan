@@ -1,0 +1,10 @@
+<!--pages/editPhone/editPhone.wxml-->
+<view class="edit">
+	<view class="edit-item">
+		<input class="edit-input" bindtap="getPhone" value="{{phone}}"></input>
+		<image src="/images/clear.png" mode="aspectFill" class="edit-image" bindtap="clear"></image>
+	</view>
+	<view class="edit-bottom" bindtap="edit">
+    <button class="edit-bottom-btn">确认</button>
+	</view>
+</view>

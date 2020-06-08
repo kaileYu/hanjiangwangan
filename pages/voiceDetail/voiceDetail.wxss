@@ -1,0 +1,108 @@
+/* pages/voiceDetail/voiceDetail.wxss */
+.voice-detail-contain{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30rpx 30rpx 100rpx;
+}
+.voice-detail-title{
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 56rpx 50rpx 56rpx 20rpx;
+  border-radius:10rpx;
+  display: flex;
+  align-items: flex-start;
+  color: #999;
+  font-size: 30rpx;
+}
+.voice-detail-title .voice-detail-title-content{
+  color:#333
+}
+
+.voice-detail-content {
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 56rpx 50rpx 56rpx 20rpx;
+  border-radius:10rpx;
+  color: #999;
+  font-size: 30rpx;
+}
+.content-font-style {
+  font-size:30rpx;
+  color: #333;
+}
+.voice-detail-content image{
+  width: 180rpx;
+  height: 180rpx;
+  margin: 20rpx;
+}
+
+.voice-detail-comment{
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 56rpx 50rpx 56rpx 20rpx;
+  border-radius:10rpx;
+  color: #999;
+  font-size: 30rpx;
+}
+
+.comment-list-item image{
+  width: 64rpx;
+  height:64rpx;
+  border-radius: 50%;
+}
+
+.comment-list-item{
+  margin-bottom: 30rpx;
+}
+
+.comment-item-content-name{
+  font-size:30rpx;
+  font-family:Alibaba PuHuiTi;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:30rpx;
+  position: relative;
+}
+.comment-item-content-name .item-role {
+  display: inline-block;
+  font-size: 14rpx;
+  
+  line-height: 14rpx;
+}
+.comment-item-content-name .lawyer {
+  border:1rpx solid #4B73EF!important;
+  border-radius:6rpx;
+  padding: 7rpx;
+  color:#4B73EF!important;
+}
+.comment-item-content-name .official{
+  border:1rpx solid #EF4B4B;
+  border-radius:6rpx;
+  color:#EF4B4B;
+  padding: 7rpx;
+}
+.comment-item-content-name .icon{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.comment-item-detail-content{
+  font-size:32rpx;
+  color: #666666;
+}
+.comment-time {
+  font-size:24rpx;
+  display: inline-block;
+  margin-left: 20rpx;
+}
+
+
+.reply-item image{
+  width:40rpx;
+  height:40rpx;
+}
+

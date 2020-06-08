@@ -1,0 +1,134 @@
+/* pages/netizenVoice/netizenVoice.wxss */
+
+.voice-banner{
+  width: 100%;
+  height:400rpx;
+}
+.voice-banner image{
+  width: 100%;
+  height:400rpx;
+}
+
+.tab-list-item{
+  padding: 30rpx 0 100rpx;
+}
+
+.tab-list-item input{
+  width:540rpx;
+  height:76rpx;
+  background:rgba(255,255,255,1);
+  border-radius:10rpx;
+  box-sizing: border-box;
+  padding: 10rpx 20rpx;
+  font-size: 30rpx;
+}
+.tab-list-item button{
+  width:130rpx !important;
+  height: 76rpx !important;
+  padding: 0rpx !important;
+  margin: 0 !important;
+  background:linear-gradient(90deg,rgba(58,125,253,1),rgba(76,115,239,1));
+  border-radius:10rpx;
+  font-size:24rpx;
+  color:rgba(255,255,255,1);
+  line-height:76rpx;
+}
+
+.voide-list-item {
+  width: 100%;
+  height:130rpx;
+  box-sizing: border-box;
+  padding: 12rpx 20rpx 12rpx 12rpx;
+  margin-top: 20rpx;
+  background:rgba(255,255,255,1);
+  border-radius:10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.voice-item-pic{
+  width:106rpx;
+  height:106rpx;
+  background:rgba(232,239,255,1);
+  border-radius:10rpx;
+}
+.voice-item-pic image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.voice-item-content{
+  flex: 1;
+  margin-left: 22rpx;
+  display: flex;
+  height: 106rpx;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.voice-item-title{
+  width: 328rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  margin-right: 30rpx;
+  color:#333333;
+  font-size:30rpx;
+}
+.voice-item-status{
+  padding: 0 12rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  border-radius: 32rpx;
+  font-size:18rpx;
+}
+.yellow{
+  border:1px solid #F8B551;
+  color:#F8B551;
+}
+.blue {
+  border:1px solid rgba(66,121,247,1);
+  color:rgba(66,121,247,1); 
+}
+.red {
+  border:1px solid red;
+  color:red; 
+}
+.see-more{
+  color:#999999;
+  font-size:20rpx;
+}
+.bottom-add-info{
+  width:750rpx;
+  height:98rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0px -2px 12px 0px rgba(188,195,213,0.23);
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+}
+.bottom-add-info-item{
+  color:#4279F7;
+  font-size: 20rpx;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12rpx 0;
+  justify-content: space-between;
+}
+
+.bottom-add-info-item image{
+  width: 42rpx;
+  height:42rpx;
+}
+
+.nothing-pic{
+  display:flex;
+  justify-content: center;
+  padding-top: 240rpx;
+}
+
+.nothing-pic image{
+  width: 212rpx;
+  height:199rpx;
+}

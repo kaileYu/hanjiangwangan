@@ -1,0 +1,32 @@
+<!--pages/welfareExchange/welfareExchange.wxml-->
+<view class="welfare-exchange">
+	<view class="welfare-exchange-info">
+		<image class="welfare-exchange-image" src="{{image}}" mode="aspectFill"></image>
+		<view class="welfare-exchange-title">
+			<view class="title">{{title}}</view>
+			<view class="num">x1</view>
+		</view>
+	</view>
+	<view class="welfare-exchange-line"></view>
+	<view class="welfare-exchange-value">
+		<view class="welfare-exchange-value-title">{{title}}</view>
+		<view class="welfare-exchange-value-point">{{point}}</view>
+	</view>
+</view>
+<view class="address">
+	<view class="address-item">
+		<label class="label">收货地址</label><input class="address-item-input" bindblur="getAdress"></input>
+	</view>
+	<view class="address-item">
+		<label class="label">收货人</label><input class="address-item-input" bindblur="getName"></input>
+	</view>
+	<view class="address-item">
+		<label class="label">联系方式</label><input class="address-item-input" type="number" bindblur="getPhone"></input>
+	</view>
+</view>
+<view class="confirm">
+	<view class="confirm-left">
+		<view class="confirm-left-combined">合计：<text class="combined"><text class="confirm-left-point">{{point}}</text> 积分</text></view>
+	</view>
+	<button class="confirm-btn" bindtap="confirm"><view class="confirm-btn-text">确认兑换</view></button>
+</view>

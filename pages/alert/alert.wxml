@@ -1,0 +1,26 @@
+<!--pages/alert/alert.wxml-->
+<view class="lvprotect">
+	<view class="lvprotect-top">
+		<input placeholder="" class="search" bindfocus="onFocus" bindblur="onBlur"></input>
+		<view class="search-text" wx:if="{{textFlag}}">
+			<icon icon="search" class="icon" color="rgba(160,160,160,1)" size="{{25}}"></icon>
+			<text class="text">搜索</text>
+		</view>
+		<button class="search-btn" size="mini" bindtap="search">
+			<view class="search-btn-text">查询</view>
+		</button>
+	</view>
+	<view class="lvprotect-list">
+		<view wx:for="{{searchList}}" wx:key="index" class="lvprotect-list-item">
+			<view class="lvprotect-list-item-cell" bindtap="gotoDetail" data-title="{{item.title}}" data-noticeid="{{item.noticeId}}">
+				<image src="{{item.cover}}" class="lvprotect-list-item-cell-image"></image>
+				<view class="lvprotect-list-item-cell-info">
+					<view class="lvprotect-list-item-cell-info-title">{{item.title}}</view>
+					<view class="lvprotect-list-item-cell-info-intro">{{item.description}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+  <view wx:if="{{bottomFlag}}" class="nonedata">抱歉！没有您搜索的结果</view>
+  <view wx:else class="lvprotect-bottom">—— 加载完毕 ——</view>
+</view>

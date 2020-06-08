@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "icon": "/components/icon/icon",
+    "bottom-input": "/components/bottomInput/index",
+    "wxparser": "plugin://wxparserPlugin/wxparser"
+  }
+}

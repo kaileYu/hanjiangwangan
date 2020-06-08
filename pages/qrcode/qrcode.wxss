@@ -1,0 +1,24 @@
+/* pages/qrcode/qrcode.wxss */
+
+.qrcode-avater{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  position: relative;
+  margin-top: 300rpx;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.qrcode-name{
+  text-align: center;
+  font-size: 38rpx;
+}
+.qrcode-btn{
+  margin-top: 100rpx;
+}
+.qrcode-cancel{
+  text-align: center;
+  color: #1aad19;
+  margin-top: 70rpx;
+}

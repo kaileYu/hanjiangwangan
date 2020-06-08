@@ -1,0 +1,62 @@
+<!--pages/liveSetting/liveSetting.wxml-->
+<block>
+  <view wx:if="{{step == 1}}" class="set-info-box">
+    <view class="setting-box">
+    <!-- 直播间名称 -->
+    <view class="space-between-center mb-40">
+      <view class="setting-box-title">直播间名称：</view>
+      <input bindblur="inputTitle" class="input-style flex-1" value="{{liveTitle}}"></input>
+    </view>
+    <!-- 观看直播积分设置 -->
+     <view class="space-between-center mb-40">
+      <view class="setting-box-title">积分设置：</view>
+      <input bindblur="inputPoint" type="number" class="input-style flex-1" value="{{point}}"></input>
+    </view>
+    <!-- 直播简介 -->
+    <view class="space-between-center mb-40">
+      <view class="setting-box-title">直播间简介：</view>
+      <textarea bindblur="inputIntroduction" class="textarea-style flex-1" value="{{liveIntroduction}}"></textarea>
+    </view>
+    <!-- 封面类型 -->
+    <picker bindchange="bindPickerChange" value="{{coverType-1}}" range="{{coverTypeArr}}">
+      <view class="space-between-center">
+          <view class="setting-box-title">
+            封面类型：
+          </view>
+          <view class="flex-1 cover-type space-between-center">
+            <text>{{coverTypeArr[coverType-1]}}</text>
+            <image src="../../images/svg/down.svg"></image>
+          </view>
+      </view>
+    </picker>
+    <!-- 如果是自定义图片，则显示上传图片按钮 -->
+    <block wx:if="{{coverType == 1}}">
+      <view class="space-between-center mt-40">
+        <view class="setting-box-title"></view>
+        <view class="flex-1 add-image center" bindtap="addImage">
+          <block>
+            <image wx:if="{{!imageUrl}}" src="../../images/svg/add.svg" class="add-btn"></image>
+            <image wx:else src="{{imageUrl}}" class="image-view"></image>
+          </block>
+        </view>
+      </view>
+      <view class="btn-view">
+        <button disabled="{{uploadDisabled}}" catchtap="uploadImg">{{btnUploadText}}</button>
+      </view>
+    </block>
+    
+
+
+    </view>
+  </view>
+  <view wx:if="{{step == 2}}">
+    <camera class="camera-style" device-position="{{isFront ? 'front' : 'back'}}"></camera>
+    <image catchtap="changeDirection" class="camera-direction" src="../../images/camera-direction.png"></image>
+  </view>
+ 
+
+</block>
+<button class="next-btn" catchtap="submitBtn" disabled="{{disableBtn}}">{{btnText}}</button>
+
+
+

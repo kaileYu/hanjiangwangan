@@ -1,0 +1,18 @@
+<!--pages/welfareList/welfareList.wxml-->
+<view class="welfare-list">
+	<view class="welfare-list-item" wx:for="{{list}}" wx:key="index" bindtap="gotoDetail" data-id="{{item.welfareId}}">
+		<view class="welfare-list-item-box">
+			<image class="welfare-list-image" src="{{item.image}}" mode="aspectFill"></image>
+			<view class="welfare-list-title">{{item.title}}</view>
+			<view class="welfare-list-textcell">
+				<view class="welfare-list-demand">{{item.point}}积分</view>
+				<view class="welfare-list-remain">已兑换{{item.exchangeNum}}件</view>
+			</view>
+			<view class="welfare-list-textcell">
+				<view class="welfare-list-value">价值：{{item.price}}元</view>
+				<view class="welfare-list-remain">还剩余{{item.surplusNum}}件</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="bottom">—— 加载完毕 ——</view>

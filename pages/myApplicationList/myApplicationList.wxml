@@ -1,0 +1,29 @@
+<!--pages/myApplicationList/myApplicationList.wxml-->
+<view class="my-application-list">
+	<view class="my-application-list-item" wx:for="{{lvProList}}" wx:key="index" wx:if="{{id==1}}" bindtap="gotoLvProDetail" data-protectionid="{{item.protectionId}}">
+		<image src="/images/my-icon/protection.png" class="my-application-list-item-image" mode="aspectFill"></image>
+		<view>
+			<view class="enterpriseName">企业名称：{{item.enterpriseName}}</view>
+			<view class="systemName">系统信息名称：{{item.systemName}}</view>
+			<view class="click">点击查看</view>
+		</view>
+		<view class="examineStatus">
+			<view class="examineStatus-pending local" wx:if="{{item.examineStatus==0}}">审核中...</view>
+			<view class="examineStatus-done local" wx:if="{{item.examineStatus==1}}">审核通过</view>
+			<view class="examineStatus-no local" wx:if="{{item.examineStatus==2}}">审核不通过</view>
+		</view>
+	</view>
+  <view class="my-application-list-item" wx:for="{{networkAppList}}" wx:key="index" wx:if="{{id==2}}" bindtap="gotoNetworkDetail" data-appid="{{item.appId}}">
+    <image src="/images/my-icon/protection.png" class="my-application-list-item-image" mode="aspectFill"></image>
+		<view>
+			<view class="enterpriseName">企业名称：{{item.enterpriseName}}</view>
+			<view class="systemName">应用名称：{{item.name}}</view>
+			<view class="click">点击查看</view>
+		</view>
+		<view class="examineStatus">
+			<view class="examineStatus-pending local" wx:if="{{item.examineStatus==0}}">审核中...</view>
+			<view class="examineStatus-done local" wx:if="{{item.examineStatus==1}}">审核通过</view>
+			<view class="examineStatus-no local" wx:if="{{item.examineStatus==2}}">审核不通过</view>
+		</view>
+  </view>
+</view>

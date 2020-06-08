@@ -1,0 +1,47 @@
+<!--pages/myAppDetail/myAppDetail.wxml-->
+<view class="my-app-detail" wx:if="{{protectionId}}">
+	<view class="enterpriseName">企业名称：<input class="enterpriseName-input" value="{{lvProData.enterpriseName}}" disabled="true"></input></view>
+	<view class="info">
+		<view class="info-item">
+			<label class="info-item-lable"> 信息系统名称：</label><input value="{{lvProData.systemName}}" class="info-item-input" disabled="{{status == 1}}" bindblur="getSystemName">{{systemName}}</input></view>
+		<view class="info-item">
+			<label class="info-item-lable"> 等级：</label><input class="info-item-input" value="{{lvProData.level}}" disabled="{{status == 1}}" bindblur="getLevel">{{level}}</input></view>
+		<view class="info-item">
+			<label class="info-item-lable"> 证书编号：</label><input value="{{lvProData.certCode}}" class="info-item-input" disabled="{{status == 1}}" bindblur="getCertCode">{{certCode}}</input></view>
+		<view class="info-item">
+			<label class="info-item-lable"> 证书上传：</label>
+			<view class="image-box">
+				<view wx:for="{{images}}" class="image-box-item" wx:key="index">
+					<image class="image" src="{{item}}" mode="aspectFill"></image>
+					<image wx:if="{{status != 1 && chooseImageFlag}}" class="delete-image" src="/images/svg/delete.svg" bindtap="delete" data-index="{{index}}"></image>
+				</view>
+				<image wx:if="{{status != 1 && chooseImageFlag}}" class="image" src="/images/svg/add.svg" bindtap="chooseImage"></image>
+			</view>
+		</view>
+		<button  wx:if="{{status != 1}}" class="upload-btn" bindtap="uploadImage" disabled="{{uploadding}}">{{uploadText}}</button>
+	</view>
+</view>
+<view class="my-app-detail" wx:if="{{appId}}">
+	<view class="enterpriseName">企业名称：<input class="enterpriseName-input" value="{{netWorkData.enterpriseName}}" disabled="true"></input></view>
+	<view class="info">
+		<view class="info-item">
+			<label class="network-info-item-lable"> 应用名称：</label><input value="{{netWorkData.name}}" class="info-item-input" disabled="{{disabled}}" bindblur="getName">{{name}}</input></view>
+		<view class="info-item">
+			<label class="network-info-item-lable"> 应用简介：</label><textarea value="{{netWorkData.name}}" class="info-item-textarea" disabled="{{disabled}}" bindblur="getIntro"></textarea></view>
+	</view>
+</view>
+<view class="status">
+	<view class="status-box" wx:if="{{status == 0}}">
+		<image src="/images/review.png" class="status-image"></image>
+		<view class="status-text">审核中</view>
+	</view>
+	<view class="status-box" wx:if="{{status == 1}}">
+		<image src="/images/success-icon.png" class="status-image"></image>
+		<view class="status-text">审核通过</view>
+	</view>
+	<view class="status-box" wx:if="{{status == 2}}">
+		<image src="/images/notThrough.png" class="status-image"></image>
+		<view class="status-text">审核不通过</view>
+	</view>
+</view>
+<button class="btn" wx:if="{{flag}}" bindtap="commit">重新上传</button>

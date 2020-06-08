@@ -1,0 +1,68 @@
+/* pages/myApplicationList/myApplicationList.wxss */
+.my-application-list{
+  width: 690rpx;
+  margin: 0 auto;
+}
+.my-application-list-item{
+  height: 160rpx;
+  background: white;
+  margin-top: 30rpx;
+  display: flex;
+  border-radius: 10rpx;
+}
+.my-application-list-item:nth-last-child(1){
+  margin-bottom: 30rpx;
+}
+.my-application-list-item-image{
+  width: 100rpx;
+  height: 100rpx;
+  margin: 30rpx; 
+}
+.enterpriseName{
+  padding-top: 10rpx;
+  font-size: 30rpx;
+  margin-top: 15rpx;
+}
+.systemName{
+  font-size: 26rpx;
+  color: #777;
+  margin-top: 15rpx;
+}
+.click{
+  font-size: 22rpx;
+  color: #aaa;
+  margin-top: 15rpx;
+}
+.examineStatus{
+  flex: 1;
+  position: relative;
+}
+.examineStatus-done{
+  font-size: 22rpx;
+  color: green;
+  border: 1rpx solid green;
+  border-radius: 16rpx;
+  padding: 5rpx;
+}
+.examineStatus-pending{
+  font-size: 22rpx;
+  color: orange;
+  border: 1rpx solid orange;
+  border-radius: 16rpx;
+  padding: 5rpx;
+}
+.examineStatus-no{
+  font-size: 22rpx;
+  color: red;
+  border: 1rpx solid red;
+  border-radius: 16rpx;
+  padding: 5rpx;
+}
+.local{
+  width: 110rpx;
+  position: absolute;
+  top: 50%;
+  right: 60rpx;
+  transform: translateY(-50%);
+  text-align: center;
+}

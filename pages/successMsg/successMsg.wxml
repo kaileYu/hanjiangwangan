@@ -1,0 +1,7 @@
+<!--pages/successMsg/successMsg.wxml-->
+<view class="success-msg-content ">
+  <image src="../../images/success-icon.png"></image>
+  <view wx:if="{{welfareId}}" class="success-content">兑换成功</view>
+  <view wx:else class="success-content">成功提交，请耐心等待审核</view>
+  <button bindtap="backToBefore">完成</button>
+</view>

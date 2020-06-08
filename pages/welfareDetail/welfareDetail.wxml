@@ -1,0 +1,29 @@
+<!--pages/welfareDetail/welfareDetail.wxml-->
+<view class="welfare">
+	<image src="{{data.image}}" class="top-image" mode="aspectFill"></image>
+	<view class="welfare-info">
+		<view class="welfare-info-title">
+			<view class="welfare-info-title-box">
+				<view class="title">{{data.title}}</view>
+				<view class="num">已兑换{{data.exchangeNum}}件</view>
+				<view class="num">还剩余{{data.surplusNum}}件</view>
+			</view>
+		</view>
+		<view class="welfare-info-value">
+			<view class="welfare-info-value-box">
+				<view class="welfare-info-value-point">{{data.point}}积分</view>
+				<view class="welfare-info-value-price">价值:{{data.price}}元</view>
+			</view>
+		</view>
+	</view>
+	<view class="welfare-intro">
+		<scroll-view scroll-y="true" class="welfare-intro">
+			<view class="welfare-intro-title">权益介绍</view>
+			<view class="welfare-description">{{data.description}}</view>
+		</scroll-view>
+	</view>
+</view>
+<view class="{{data.enjoy? 'welfare-bottom' : 'welfare-bottom-none'}}" bindtap="gotoExchange">
+	<button wx:if="{{data.enjoy}}" class="welfare-bottom-button"><text class="welfare-bottom-button-text">立即兑换</text></button>
+	<button wx:else class="welfare-bottom-button-none"><text class="welfare-bottom-button-text">积分不足</text></button>
+</view>

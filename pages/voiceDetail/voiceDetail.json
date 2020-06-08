@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "详情",
+  "usingComponents": {
+    "bottom-input": "../../components/bottomInput/index",
+    "icon": "/components/icon/icon"
+  }
+}

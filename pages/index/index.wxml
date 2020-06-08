@@ -1,0 +1,12 @@
+<!--授权页面时显示该页面-->
+<block wx:if="{{showAuth == 2}}">
+	<home wx:if="{{pageId == 0}}" userInfo="{{userInfo}}" />
+	<my wx:else userInfo="{{userInfo}}"/>
+</block>
+<tabBar wx:if="{{showAuth == 2}}" bind:changePage="pageChange"></tabBar>
+
+
+<!-- 未授权登陆时显示该页面 -->
+<auth wx:if="{{showAuth == 1}}" islogin="{{islogin}}" bind:changAuthStatus="changAuthStatus"></auth>
+<screen class="srceen" wx:if="{{userInfo? false : true}}"></screen>
+

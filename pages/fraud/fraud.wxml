@@ -1,0 +1,28 @@
+<!--pages/fraud/fraud.wxml-->
+<view class="fraud">
+	<swiper class="fraud-top">
+		<swiper-item wx:for="{{bannerList}}" wx:key="index">
+			<image class="fraud-top-image" src="{{item.image}}" mode="aspectFill" />
+		</swiper-item>
+
+	</swiper>
+</view>
+<view class="navbar">
+	<view wx:for="{{cateList}}" wx:key="index" bindtap="select" data-id="{{item.cateId}}" class="{{item.cateId == activedId? 'navbar-item-active' : 'navbar-item'}}">{{item.title}}</view>
+</view>
+<view class="navbar-item-list" wx:for="{{cateList}}" wx:key="index" wx:if="{{activedId == item.cateId? true : false}}">
+	<view class="navbar-item-list-title">{{item.description}}</view>
+	<view class="video-list-item" wx:for="{{list}}" wx:key="index" bindtap="gotoDetail" data-propid="{{item.propId}}" data-type="{{item.type}}" data-title="{{item.title}}">
+		<view class="video-list-item-cell">
+			<image class="video-list-item-image" src="{{item.cover}}" mode="aspectFill"></image>
+			<view class="video-list-item-info">
+				<view class="video-list-item-info-title">{{item.title}}</view>
+				<view class="video-list-item-info-integral">学习积分：<text class="text">{{item.point}} "</text></view>
+				<view class="video-list-item-info-bottom">
+					<view class="video-list-item-info-click">点击查看</view>
+					<view class="video-list-item-info-time">{{item.createTime}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

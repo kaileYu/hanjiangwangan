@@ -1,0 +1,149 @@
+<!--pages/fraudDetail/fraudDetail.wxml-->
+<wxs module="m2">
+	function format(ts) {
+		var minute = 1000 * 60;
+		var hour = minute * 60;
+		var day = hour * 24;
+		var halfamonth = day * 15;
+		var month = day * 30;
+		var now = getDate();
+		var diffValue = now - ts;
+		if (diffValue < 0) {
+			return;
+		}
+		var monthC = diffValue / month;
+		var weekC = diffValue / (7 * day);
+		var dayC = diffValue / day;
+		var hourC = diffValue / hour;
+		var minC = diffValue / minute;
+		if (monthC >= 1) {
+			result = "" + parseInt(monthC) + "月前";
+		} else if (weekC >= 1) {
+			result = "" + parseInt(weekC) + "周前";
+		} else if (dayC >= 1) {
+			result = "" + parseInt(dayC) + "天前";
+		} else if (hourC >= 1) {
+			result = "" + parseInt(hourC) + "小时前";
+		} else if (minC >= 1) {
+			result = "" + parseInt(minC) + "分钟前";
+		} else
+			result = "刚刚";
+		return result;
+	}
+	module.exports.format = format
+</wxs>
+<view wx:if="{{type == 1}}">
+	<video class="top-video" src="{{url}}" danmu-list="{{barrageList}}" danmu-btn enable-danmu bindtimeupdate="getSendTime" bindplay="showInput" id="video" bindended="claerTimeOut">
+		<!--弹幕-->
+		<!-- <view wx:if="{{inputFlag}}" class="fly-barrage">
+			<canvas wx:if="{{version === 'v2'}}" type="2d" id="BarrageCanvas" style="width: 100%; height: 100%;"></canvas>
+			<canvas wx:else canvas-id="BarrageCanvas" id="BarrageCanvas" style="width: 100%; height: 100%;"></canvas>
+		</view> -->
+	</video>
+	<view class="nav">
+		<view class="{{current == 0? 'nav-info-active' : 'nav-info'}}" bindtap="navInfo">简介</view>
+		<view class="{{current == 1? 'nav-comment-active' : 'nav-comment'}}" bindtap="navComment">评论</view>
+		<view wx:if="{{inputFlag}}" class="send-danmu">
+			<!--发送弹幕-->
+			<input placeholder="点我发弹幕" class="input-danmu" placeholder-class="placeholder" bindblur="getSendMessage" confirm-type="send" bindconfirm="sendBarrage" value="{{sendMessage}}"></input>
+			<view class="danmu-image-box" catchtap="btnsendBarrage">
+				<image class="danmu-image" src="/images/live-icon/send.png"></image>
+			</view>
+		</view>
+	</view>
+	<swiper current="{{current}}" class="swiper">
+		<swiper-item>
+			<view class="info">
+				<view class="title">{{data.title}}</view>
+				<view class="intro">{{data.description}}</view>
+			</view>
+			<view class="videoList">
+				<view class="videoList-top">
+					<view class="videoList-title">选集（{{videoCount}}）</view>
+					<view class="all" bindtap="showVideoList">查看全部</view>
+				</view>
+				<scroll-view scroll-x="true" class="scroll">
+					<view class="videoList-cell" style="width: {{width}}rpx">
+						<view wx:for="{{videoList}}" wx:key="index" class="{{recordId == item.recordId?  'videoList-item-active' : 'videoList-item'}}" bindtap="select" data-url="{{item.url}}" data-recordid="{{item.recordId}}" data-videoid="{{item.videoUrlId}}">{{item.title}}</view>
+					</view>
+				</scroll-view>
+			</view>
+		</swiper-item>
+		<swiper-item>
+			<view wx:if="{{commentList == ''}}" class="none-comment">还没有评论，快来评论呀！</view>
+			<view wx:if="{{commentList.length>0}}" class="voice-detail-comment mt-20">
+				<block wx:for="{{commentList}}" wx:key="index">
+					<view class="comment-list-item flex-start" bindtap="replySomeone" data-commentid="{{item.commentId}}">
+						<image class="mr-20" src="{{item.userAvatar}}"></image>
+						<view class="flex-1 comment-item-content">
+							<view class="comment-item-content-name">
+								{{item.userName}}
+								<text class="item-role {{item.role == 1? 'lawyer' : item.role == 2 ? 'official' : ''}}">{{item.role == 1? '律师' : item.role == 2 ? '官方' : ''}}</text>
+								<icon wx:if="{{item.userId == userId}}" class="icon" icon="delete" type="outline" color="rgba(102, 102, 102, 1)" size="{{16}}" catchtap="deleteComment" data-id="{{item.commentId}}"></icon>
+							</view>
+							<view class="mt-20">
+								<text class="comment-item-detail-content">{{item.content}}</text>
+								<text class="comment-time">{{m2.format(item.createTime)}}</text>
+							</view>
+							<block wx:if="{{item.showMoreReply}}" wx:for="{{item.replyList}}" wx:for-item="replyItem" wx:key="replyId">
+								<view class="mt-20 flex-start reply-item">
+									<image class="mr-20" src="{{replyItem.replyUserAvatar}}"></image>
+									<view class="flex-1 reply-item-content" data-item="{{replyItem}}" catchtap="replyToSomeOne">
+										<!-- 显示回复的姓名 -->
+										<view class="comment-item-content-name">
+											{{replyItem.replyUserName}}
+											<!-- 删除回复 -->
+											<icon wx:if="{{replyItem.replyUserId == userId}}" class="icon" icon="delete" type="outline" color="rgba(102, 102, 102, 1)" size="{{16}}" catchtap="deleteReply" data-id="{{replyItem.replyId}}"></icon>
+										</view>
+										<!-- 回复的内容 -->
+										<view class="mt-20">
+											<text wx:if="{{replyItem.parentReplyUserName}}" style="color:#666666;font-size:32rpx;">回复 </text>
+											<text wx:if="{{replyItem.parentReplyUserName}}">{{replyItem.parentReplyUserName}}: </text>
+											<text class="comment-item-detail-content">{{replyItem.content}}</text>
+											<text class="comment-time">{{m2.format(replyItem.createTime)}}</text>
+										</view>
+									</view>
+								</view>
+							</block>
+							<view class="more-replay">
+							</view>
+							<view catchtap="showReply" data-commentid="{{item.commentId}}" wx:if="{{item.replyNum>0}}" class="comment-item-content-name mt-20">— 展开{{item.replyNum}}条回复</view>
+						</view>
+					</view>
+				</block>
+				<view wx:if="{{totalCount-page*10 > 0}}" class="none" bindtap="getMoreComment">—— 加载更多 ——</view>
+				<view wx:else class="none">—— 加载完毕 ——</view>
+			</view>
+			<bottom-input bind:sendComment="sendComment" bind:loseBlur="loseBlur" focus="{{focus}}" btnDisable="{{btnDisable}}" placeholder="{{placeholder}}" inputDetail="{{commentDetail}}" />
+		</swiper-item>
+	</swiper>
+	<view wx:if="{{allFlag}}" class="all-video">
+		<view class="all-video-cell">
+			<view class="all-video-title">选集（{{videoCount}}）</view>
+			<image class="close-img" src="/images/close.png" bindtap="closeVideoList"></image>
+		</view>
+		<scroll-view scroll-y>
+			<view class="all-video-box">
+				<view wx:for="{{videoList}}" wx:key="index" class="{{recordId == item.recordId? 'all-video-item-active' : 'all-video-item'}}" bindtap="select" data-url="{{item.url}}" data-recordid="{{item.recordId}}" data-videoid="{{item.videoUrlId}}">{{item.title}}</view>
+			</view>
+		</scroll-view>
+	</view>
+</view>
+
+<view wx:if="{{type == 2}}" class="fr-view">
+	<block>
+		<rich-text nodes="{{richContent}}">
+		</rich-text>
+		<!-- <wxparser rich-text="{{richContent}}" /> -->
+	</block>
+</view>
+
+<view wx:if="{{type == 3}}">
+	<block wx:for="{{imagesArr}}" wx:key="index">
+		<image src="{{item}}" mode="widthFix" style="width:100%" />
+	</block>
+</view>
+
+<view wx:if="{{type == 4}}">
+	<web-view src="{{data.file}}"></web-view>
+</view>

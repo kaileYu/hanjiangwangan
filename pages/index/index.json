@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "邗江网安",
+  "usingComponents": {
+    "home": "../../components/home/home",
+    "my": "../../components/my/my",
+    "tabBar": "../../components/tabBar/tabBar",
+    "auth": "../../components/auth/auth",
+    "screen": "../../components/screen/screen"
+  }
+}

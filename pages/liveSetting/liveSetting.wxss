@@ -1,0 +1,123 @@
+/* pages/liveSetting/liveSetting.wxss */
+.set-info-box{
+  box-sizing:border-box;
+  padding: 30rpx 30rpx 180rpx;
+  width: 100%;
+}
+.setting-box{
+  background:rgba(255,255,255,1);
+  border-radius:10rpx;
+  box-sizing: border-box;
+  padding: 30rpx 80rpx 180rpx 30rpx;
+}
+.next-btn {
+  position:fixed;
+  bottom: 100rpx;
+  left:50%;
+  transform: translateX(-50%);
+  width:670rpx!important;
+  height:90rpx!important;
+  padding: 0!important;
+  background:linear-gradient(90deg,rgba(58,125,253,1),rgba(76,115,239,1));
+  box-shadow:0px 4px 9px 0px rgba(77,126,247,0.61);
+  border-radius:45px;
+  line-height: 90rpx;
+  font-size: 36rpx;
+  color:#fff;
+  font-weight: normal;
+}
+
+.camera-style{
+  width: 100%;
+  height:100vh;
+  position:relative;
+}
+
+.camera-direction{
+  position: fixed;
+  bottom: 250rpx;
+  left:50%;
+  transform: translateX(-50%);
+  width: 56rpx;
+  height:47rpx;
+}
+
+.setting-box-title{
+  width: 184rpx;
+  height:30rpx;
+  font-size: 30rpx;
+  color: #666;
+  text-align: right;
+  margin-right:30rpx;
+  line-height: 30rpx;
+}
+
+.input-style{
+  height: 60rpx;
+  box-sizing: border-box;
+  padding: 5rpx 25rpx;
+  border:1rpx solid rgba(220,220,220,1);
+  border-radius:10rpx;
+  color:#333333;
+  font-size:24rpx;
+  line-height:48rpx;
+}
+.textarea-style{
+  height: 170rpx;
+  box-sizing: border-box;
+  padding: 5rpx 25rpx;
+  border:1rpx solid rgba(220,220,220,1);
+  border-radius:10rpx;
+  color:#333333;
+  font-size:24rpx;
+}
+
+.cover-type{
+  height: 60rpx;
+  box-sizing: border-box;
+  padding: 5rpx 25rpx;
+  border:1rpx solid rgba(220,220,220,1);
+  border-radius:10rpx;
+  color:#333333;
+  font-size:24rpx;
+  line-height:48rpx;
+}
+.cover-type image{
+  width: 26rpx;
+  height:26rpx;
+}
+
+.add-image{
+  height: 250rpx;
+  box-sizing: border-box;
+  border:1rpx solid rgba(220,220,220,1);
+  border-radius:10rpx;
+}
+
+.add-image .add-btn{
+  width:80rpx;
+  height: 80rpx;
+}
+.add-image .image-view{
+  width: 100%;
+  height: 100%;
+}
+
+.btn-view{
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 26rpx;
+}
+
+.btn-view button{
+  width:152rpx!important;
+  height:50rpx!important;
+  line-height: 50rpx;
+  padding: 0!important;
+  margin: 0!important;
+  text-align: center;
+  background:rgba(255,185,94,1);
+  border-radius:10rpx;
+  color:#fff;
+  font-size: 24rpx;
+}

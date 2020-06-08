@@ -1,0 +1,17 @@
+<!--pages/myInfo/myInfo.wxml-->
+<view class="myinfo">
+	<view class="address">
+		<view class="address-item">
+			<label class="label">头像</label><image src="{{avatar}}" mode="aspectFill" class="myinfo-image"></image>
+		</view>
+		<view class="address-item">
+			<label class="label">昵称</label><view class="address-item-input">{{name}}</view>
+		</view>
+		<view class="address-item">
+			<label class="label">性别</label><view class="address-item-input">{{sex}}</view>
+		</view>
+    <view class="address-item">
+			<label class="label">联系方式</label><view class="address-item-input" bindtap="gotoEdit">{{phone}} ></view>
+		</view>
+	</view>
+</view>

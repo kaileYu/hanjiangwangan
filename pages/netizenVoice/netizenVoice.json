@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "网民发声",
+  "usingComponents": {
+    "icon": "/components/icon/icon",
+    "sliderTab": "../../components/sliderTab/sliderTab"
+  }
+}

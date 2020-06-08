@@ -1,0 +1,9 @@
+<!--pages/qrcode/qrcode.wxml-->
+<view class="qrcode"> 
+  <view class="qrcode-userinfo">
+    <image src="{{avater}}" class="qrcode-avater"></image>
+    <view class="qrcode-name">{{name}}</view>
+  </view>
+  <button type="primary" class="qrcode-btn">确认登录</button>
+  <view class="qrcode-cancel">取消</view>
+</view>
